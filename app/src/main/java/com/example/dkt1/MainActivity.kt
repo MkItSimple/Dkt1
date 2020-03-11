@@ -8,29 +8,23 @@ import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
 
-    @Inject lateinit var info: Info
+    // Initialize ViewModel
+    private lateinit var viewModel: ScoreViewModel
+    private lateinit var viewModelFactory: ScoreViewModelFactory
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        DaggerMagicBox.create().poke(this)
-        val mInfo = info.text
+        viewModelFactory = ScoreViewModelFactory(0)
 
-//        lateinit var viewModel: ScoreViewModel
-//        viewModel = ViewModelProviders.of(this)[ScoreViewModel::class.java]
-//        val text = viewModel.addScore();
+        viewModel = ViewModelProviders.of(this, viewModelFactory)[ScoreViewModel::class.java]
+
+        val text = viewModel.getScore(23);
 
         val duration = Toast.LENGTH_SHORT
-        val toast = Toast.makeText(this, mInfo, duration)
+        val toast = Toast.makeText(this, text, duration)
         toast.show()
     }
 
-    class Info(val text: String)
-
-//    class Info @Inject constructor(val text: String)
-
-//    class Info @Inject constructor() {
-//        val text = "Hello Dagger 2"
-//    }
 }
