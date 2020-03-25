@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/pokemonList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+<!--    <view class="androidx.appcompat.app.AlertController$RecycleListView"-->
+<!--        android:id="@+id/pokemonList"-->
+<!--        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
+<!--    </view>-->
+
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Pokemon List Fragment"/>-->
+
+</LinearLayout>
+
+<!--    android:id="@+id/pokemonlist_recyclerview"-->
+<!--    android:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
