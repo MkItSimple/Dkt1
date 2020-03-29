@@ -1,5 +1,6 @@
 package com.example.dkt1.ui
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,7 +27,6 @@ class PokemonListAdapter : RecyclerView.Adapter<PokemonListAdapter.PokemonViewHo
         }
     }
 
-
     class  PokemonViewHolder(view: View) : RecyclerView.ViewHolder(view){
         val pokemonName = view.pokemonName
     }
@@ -40,5 +40,4 @@ class PokemonListAdapter : RecyclerView.Adapter<PokemonListAdapter.PokemonViewHo
     fun setClickListener(listener: OnClickListener){
         this.listener = listener
     }
-
 }
