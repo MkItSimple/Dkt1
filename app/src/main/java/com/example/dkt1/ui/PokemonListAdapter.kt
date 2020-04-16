@@ -40,4 +40,6 @@ class PokemonListAdapter : RecyclerView.Adapter<PokemonListAdapter.PokemonViewHo
     fun setClickListener(listener: OnClickListener){
         this.listener = listener
     }
+
+
 }

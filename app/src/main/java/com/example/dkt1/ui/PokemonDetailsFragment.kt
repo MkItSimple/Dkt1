@@ -34,7 +34,6 @@ class PokemonDetailsFragment : BaseFragment() {
         id?.let { getPokemonDetails(it) }
     }
 
-
     fun getPokemonDetails(id: Int) {
         if (isVisible) {
             pokemonDetailsViewModel.getPokemonDetails(id)
@@ -56,5 +55,4 @@ class PokemonDetailsFragment : BaseFragment() {
     }
 
     override fun getLayoutById() = R.layout.fragment_pokemon_details
-
 }

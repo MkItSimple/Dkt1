@@ -1,6 +1,7 @@
 package com.example.dkt1.ui
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -9,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -56,7 +58,6 @@ class PokemonListFragment : Fragment(), OnClickListener {
             addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
             adapter = pokadapter
         }
-
     }
 
     fun getPokemonListData() {
@@ -69,7 +70,7 @@ class PokemonListFragment : Fragment(), OnClickListener {
     }
 
     override fun onClick(position: Int, view: View) {
-        getPokemonDetails(position+1)
+        getPokemonDetails(position+2)
     }
 
     fun observePokemonList() {
@@ -96,11 +97,14 @@ class PokemonListFragment : Fragment(), OnClickListener {
         bundle.putInt(POKEMON_DETAILS_KEY,id)
         pokemonDetailsFragment.arguments = bundle
 
-        Log.d("PLF", "getPokemonDetails");
+        Log.d("PLF", "getPokemonDetails $id");
 
-//        (activity as BaseActivity).supportFragmentManager.beginTransaction()
-//            .replace(R.id.container, pokemonDetailsFragment)
-//            .addToBackStack(null)
-//            .commit()
+        (activity as MainActivity).supportFragmentManager.beginTransaction()
+            .replace(R.id.container, pokemonDetailsFragment)
+            .addToBackStack(null)
+            .commit()
+
+
     }
+
 }
